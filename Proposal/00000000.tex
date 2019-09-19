@@ -1,0 +1,68 @@
+
+
+
+
+
+
+\newpage
+
+Markov Decision Process: The current $x_{t}$ serves as the sole basis for making a decision $d_{t}$. 
+
+In the Markov Anticipation process: The current $x_{t}$, and some future anticipated state $x_{a}$, serves as the sole basis for making a decision $d_{t}(x_{a})$. 
+
+\begin{equation}
+    \ubar{x}^*=\argmin_{\ubar{x}} \left\{  \sum^{T}_{t=1}   \sum_{s_t \in S_t} p(\ubar{s}|s_{t}) F(\ubar{s},s_t,\theta) \right\} 
+\end{equation}
+
+
+
+\begin{equation}
+    {\bb{A},b}=\argmin_{\bb{A},b} \left\{ \V{f(x)} - \alpha \E{f(x) } \right\} 
+\end{equation}
+
+
+
+\begin{equation}
+    F=\argmin_{f \in \mathcal{C}^2} \left\{ \E{f(x)^2} - \E{f(x)}^2 - \alpha \E{f(x) }    \right\} 
+\end{equation}
+
+
+
+\begin{align}
+    c(\bb{x}) = \bb{g}^\top \bb{x} + \bb{x}^\top \bb{H} \bb{x}
+\end{align}
+
+\begin{align}
+\E{c(\bb{x})}= \tr{\bb{H}\bb{\Sigma}}+ \bb{\mu}^\top \bb{H} \bb{\mu} + \bb{g}^\top \bb{\mu}
+\end{align}
+
+
+\begin{align}
+\nabla_{\bb{g}} \E{c(\bb{x})} &= \bb{\mu} \\
+\nabla_{\bb{H}} \E{c(\bb{x})} &= \bb{\Sigma} + \bb{\mu} \, \bb{\mu}^\top
+\end{align}
+
+
+
+
+
+\begin{align}
+\V{c(\bb{x})}= 2 \tr{ \bb{H}\bb{\Sigma} \bb{H}\bb{\Sigma}} + 4 \bb{\mu}^\top \bb{H}\bb{\Sigma} \bb{H} \bb{\mu} + 4 \bb{g}^\top \bb{\Sigma} \bb{H}\bb{\mu} + \bb{g}^\top \bb{\Sigma} \bb{g}
+\end{align}
+
+
+\begin{align}
+    \nabla_{\bb{g}} \V{c(\bb{x})} &= 4 \bb{\Sigma} \bb{H}\bb{\mu} + 2\bb{\Sigma} \bb{g} \\
+    \nabla_{\bb{H}} \V{c(\bb{x})} &= 4 \bb{\Sigma}\bb{H}\bb{\Sigma} + 4(\bb{\mu} \bb{\mu}^\top \bb{H} \bb{\Sigma} +\bb{\Sigma} \bb{H} \bb{\mu} \bb{\mu}^\top ) + 2(\bb{\mu} \bb{g}^\top \bb{\Sigma} + \bb{\Sigma}\bb{g}\bb{\mu}^\top) 
+\end{align}
+
+
+
+Optimally Condition for $\bb{g}$
+\begin{align}
+     4 \bb{\Sigma} \bb{H}\bb{\mu} + 2\bb{\Sigma} \bb{g} = \alpha \bb{\mu} \\
+     \bb{g}^* = \frac{1}{2} ( \alpha \bb{\Sigma}^{-1}   -  4 \bb{H} )\bb{\mu} \\
+\end{align}
+
+
+

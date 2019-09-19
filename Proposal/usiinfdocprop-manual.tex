@@ -1,0 +1,261 @@
+\documentclass[a4paper]{article}
+\usepackage{booktabs}
+\usepackage{url,xspace,array}
+\newcommand{\clsusiinf}{\textsf{usiinfdocprop}\xspace}
+\author{ Domenico Bianculli}
+\title{\clsusiinf Doctoral Proposal Style
+  Documentation\footnote{\textsf{usiinf} and USI-INF
+  stand for \emph{Universit\`a della Svizzera Italiana (USI)  - Faculty of Informatics}.}}
+\setlength{\marginparwidth}{1in}
+\begin{document}
+\maketitle
+
+\section{Overview}
+
+The \clsusiinf\LaTeX\ class for USI-INF doctoral proposals is based on the standard
+\textsf{book} class, and provides additional commands, environments
+and default text to help typesetting  proposals submitted at USI-INF.
+
+\section{Minimal Document Structure}
+
+The minimal structure of a dissertation document is shown below:
+\begin{verbatim}
+
+\documentclass[]{usiinfdocprop}
+
+\title{My Doctoral Proposal} 
+\author{Philo S. Doctor}
+\begin{committee}
+  \advisor{Prof.}{Alonzo}{Church}{University of California, Los
+    Angeles, USA}
+  \internalmember{Dr.}{Leslie}{Lamport}
+  % other internal members
+  \externalmember{Prof.}{Alan M.}{Turing}{Princeton University, USA}
+  % other external members
+} 
+\phddirector{The PhD program Director \emph{pro tempore}} 
+
+\abstract{Your Abstract}
+
+\begin{document}
+\maketitle 
+
+\frontmatter 
+
+\tableofcontents 
+
+\mainmatter
+
+\chapter{Introduction}
+
+\backmatter
+
+\bibliographystyle{plainnat}
+\bibliography{biblio}
+
+\end{document}
+\end{verbatim}
+
+The commands in the preamble should be self-explanatory and are
+required to complete the title page and the list of your 
+committee members. See next section for a complete command reference.
+
+
+\section{Command reference}
+
+\reversemarginpar
+
+This command reference lists only commands provided by the USI-INF
+doctoral proposal class. Commands inherited from the \texttt{book} class or
+any of the loaded packages are not documented here, unless 
+significant changes were made to them.
+
+\subsection{Preamble Commands and Environments}
+\noindent
+The title of the proposal\marginpar{\texttt{\char`\\ title}}. This
+command is mandatory and takes one argument.
+
+\medskip
+
+\noindent
+The subtitle of the proposal\marginpar{\texttt{\char`\\subtitle}}. This
+command is optional and takes one argument.
+
+\medskip
+
+\noindent
+ The author of this proposal, i.e.,
+you. This\marginpar{\texttt{\char`\\ author}} 
+command is mandatory and takes one argument.
+
+\medskip
+
+\noindent
+This environment constructs the list of your committee members.
+\marginpar{\texttt{committee}} 
+Inside this environment you may use the \verb!\advisor!,
+\verb!\coadvisor!, \verb!internalmember!, \verb!\externalmember! commands.
+This environment is mandatory.
+
+\medskip
+
+\noindent
+The research advisor, or main advisor\marginpar{\texttt{\char`\\ advisor}}
+responsible for the student submitting the proposal. This command is
+mandatory and takes four arguments:  academic
+title, first and middle name, last name and affiliation. 
+
+\medskip
+
+\noindent
+ The co-advisor of the student. This\marginpar{\texttt{\char`\\coadvisor}} 
+command is optional and should only be used if you have an official
+co-advisor. This command  takes four arguments:  academic
+title, first and middle name, last name and affiliation. 
+
+\medskip
+
+\noindent
+Creates an entry for one internal 
+\marginpar{\texttt{\char`\\internalmember}}
+member in the list of your
+committee. This commands takes three arguments:  academic title,
+ first and middle name, last name; an optional argument can be given
+to specify an affiliation different than USI-INF (e.g., an affiliated
+research institute).
+
+\medskip
+
+\noindent
+Creates an entry for one external 
+\marginpar{\texttt{\char`\\externalmember}}
+member in the list of your
+committee. This commands takes four arguments:  academic title,
+ first and middle name, last name, affiliation.
+
+
+\medskip
+
+\noindent
+The director of the USI-INF PhD
+program.\marginpar{\texttt{\char`\\phddirector}} This is mandatory
+and takes one argument.
+
+\medskip
+
+\noindent
+Typeset the abstract on the title page.
+\marginpar{\texttt{\char`\\abstract}} This command is mandatory and
+takes one argument.
+
+\medskip
+
+\subsection{Text Body Commands and Environments}
+\noindent
+Typeset the committee on a dedicated page \marginpar{\texttt{\char`\\frontmatter}} and initializes formatting and
+pagination settings. This command \emph{must} appear after
+\verb|\maketitle| and before any other commands or text.
+
+\medskip
+
+\noindent
+This command must appear after
+all\marginpar{\texttt{\char`\\mainmatter}} frontmatter parts (e.g.,
+list of figures, list of tables) and before the
+first chapter of the main text body.
+
+\medskip
+
+\noindent
+This command switches formatting\marginpar{\texttt{\char`\\backmatter}} and pagination to the form used for the
+backmatter. This command \emph{must} appear after the last
+chapter/appendix and before the bibliographic references.
+
+\subsection{Class Options}
+
+The default layout produced by the class is targeted to ``electronic''
+\marginpar{\texttt{print}} publishing and uses margins consistent with the normal \LaTeX\
+\texttt{oneside} option. This option
+ switches the layout and various other things to something that is
+more suitable for two-sided printing and binding.
+ Standard \LaTeX\ options \texttt{oneside} or \texttt{twoside} are disabled.
+
+\medskip
+
+\noindent
+By default, the class loads the \texttt{hyperref} package with the proper
+options. \marginpar{\texttt{nohyper}} Since the \texttt{hyperref} package redefines
+many \LaTeX\ commands, it may conflict with other packages you
+use. This option let you  disable the loading of the package.
+
+
+
+\section{Required Packages}
+
+The \clsusiinf class makes extensive use of a wide range of
+``standard''\footnote{Standard packages are the ones available in a
+  modern \LaTeX\ distribution, like \TeX Live
+  (\url{http://www.tug.org/texlive}) and Mac\TeX\ (\url{http://www.tug.org/mactex}).}
+\LaTeX\ packages. Table~\ref{tab:packages} lists all packages (and options)
+that are loaded by the class, and thus do not need to be loaded in
+your thesis document.
+
+\begin{table}
+\centering
+\begin{tabular}{>{\sffamily}l>{\ttfamily}l}
+\toprule
+Package & Options\\
+\midrule
+amsmath & \\
+book (class) & a4paper, 12pt, onecolumn, final, openright, titlepage
+\\
+beramono & scaled \\
+booktabs & \\
+calc & \\
+caption & font=sf, labelsep=period \\
+datatool & \\
+fancyhdr & \\
+fontenc & T1\\
+geometry & a4paper \\
+graphicx & \\
+hyperref &  unicode, plainpages=false, pdfpagelabels, breaklinks\\
+hypcap & all \\
+mathdesign & charter\\
+natbib & square \\
+sectsty & \\
+textcomp & \\
+url & \\
+
+\bottomrule
+\end{tabular}
+\caption{Required packages and selected options}\label{tab:packages}
+\end{table}
+
+The packages \texttt{beramono} and \texttt{mathdesign} select, respectively, the
+monospaced and the math fonts.
+The class file also uses the \emph{Optima} font package for the sans
+serif fonts\footnote{The \emph{Optima} (aka \emph{URW Classico}) font
+  is not bundled with \TeX live-based distributions. However, they
+  provide a script, \texttt{getnonfreefonts}, for installing extra
+  fonts. To install \emph{Optima}, just type \texttt{getnonfreefonts
+    classico} on the command line; the script requires \texttt{wget}
+  to be installed.}. \texttt{fontenc} and \texttt{textcomp} are required to
+make these fonts work properly. 
+
+
+\section{Acknowledgments}
+\clsusiinf is based on the \textsf{usiinfthesis} class, written by
+Domenico Bianculli and Jochen Wuttke.
+
+\section{Version History}
+\begin{description}
+\item[2009/08/25 v.~1.0.2] \ \\  Fixed compatibility with
+  \textsf{datatool} v.~2.0.x
+\item[2009/07/05 v.~1.0.1] \ \\  Included changes of
+  \textsf{usiinfthesis} v.~1.0.7: Fixed header capitalization problems
+  in frontmatter. Fixed page number issue with toc, lof, lot
+\item[2009/06/23 v.~1.0] initial release
+\end{description}
+
+\end{document}
+

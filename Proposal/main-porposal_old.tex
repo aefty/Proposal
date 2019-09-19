@@ -1,0 +1,391 @@
+\documentclass[]{usiinfdocprop}
+\usepackage{lipsum}
+\usepackage{accents}
+\usepackage{bm}
+
+
+
+\newcommand{\thickhat}[1]{\mathbf{\hat{\text{$#1$}}}}
+\newcommand{\thickbar}[1]{\mathbf{\bar{\text{$#1$}}}}
+\newcommand{\thicktilde}[1]{\mathbf{\tilde{\text{$#1$}}}}
+\newcommand{\card}[1]{\text{card}(#1)}
+
+
+
+\newcommand{\E}[1]{\mathbb{E} \left[#1 \right]}
+\newcommand{\EO}[2]{\mathbb{E}_{#1} \left[#2 \right]}
+
+\newcommand{\V}[1]{\mathbb{V} \left[#1 \right]}
+
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}[theorem]{Definition}
+
+\newcommand{\bb}[1]{\boldsymbol{\mathbf{#1}}}
+\newcommand{\tr}[1]{\text{Tr}[#1]}
+\newcommand{\one}[1]{\mathbf{1}_{#1}}
+\newcommand{\qq}[3]{Q_{\boldsymbol{\mathbf{#1}}}(\boldsymbol{\mathbf{#2}},\boldsymbol{\mathbf{#3}})}
+\newcommand{\Diag}[1]{\text{Diag}(#1)}
+
+\newcommand{\ubar}[1]{\underaccent{\bar}{#1}}
+
+
+\begin{committee}
+  \advisor{Prof.}{Carlo}{Ghezzi}{Politecnico di Milano, Italy}
+  \internalmember{Prof.}{Mehdi}{Jazayeri}
+  \internalmember{Prof.}{Walter}{Binder}
+  \externalmember{Prof.}{Tevfik}{Bultan}{University of California -
+    Santa Barbara, USA}
+  \externalmember{Prof.}{Schahram}{Dustdar}{Technische Universit\"at  Wien, Austria}
+  \externalmember{Prof.}{Sebasti\'an}{Uchitel}{Universidad de Buenos
+    Aires, Argentina}
+\end{committee}
+\phddirector{Prof. Olaf Schenk}
+\author{Aryan Eftekhari}
+\title{Anticipatory Systems}
+\subtitle{Second Title}
+\usepackage{tikz}
+\usetikzlibrary{automata}
+\usepackage{listings}
+
+\hypersetup{
+colorlinks = true,
+linkcolor = blue,
+urlcolor  = blue,
+citecolor = blue,
+anchorcolor = blue
+}
+
+%change 'sl' to 'bf' for bold, or 'normalfont' for no special
+%formatting
+\captionsetup{labelfont={sl,sf}}
+
+\lstdefinelanguage{algebra}
+{morekeywords={import,sort,constructors,observers,transformers,axioms,if,
+else,end},
+sensitive=false,
+morecomment=[l]{//s},
+}
+\abstract{\lipsum[1]}
+\begin{document}
+\maketitle
+\frontmatter
+\tableofcontents
+\mainmatter
+\chapter[Short title]{Introduction}
+
+\lipsum[2-5]
+
+\begin{figure}
+\centering
+a figure\dots
+\caption{\textsc{Automaton} for something or other. A caption can be rather
+long and \emph{should} then consist of complete sentences ended with a `.'}
+\end{figure}
+
+\section{Notes}
+
+
+
+\subsection{Anticipation}
+\begin{itemize}
+
+    \item \citep[Introduction]{Pezzulo2014}The general idea that brains anticipate the future, that they engage in prediction, and that one means of doing this is through some sort of inner model that can be run offline, has a long history. Some version of the idea was common to Aristotle, as well as to many medieval scholastics, to Leibniz and Hume, and in more recent times, to Kenneth Craik and Philip Johnson-Laird. One reason that this general idea recurs continually is that this is the kind of picture that introspection paints. When we are engaged in tasks it seems that we form images that are predictions, or anticipations, and that these images are isomorphic to what they represent. But as much as the general idea recurs, opposition to it also recurs. The idea has never been widely accepted, or uncontroversial among psychologists, cognitive scientists and neuroscientists. The main reason has been that science cannot be satisfied with metaphors and introspection. In order to gain acceptance, an idea needs to be formulated clearly enough so that it can be used to construct testable hypotheses whose results will clearly support or cast doubt upon the hypothesis. Next, those ideas that are formulable in one or another sort of symbolism or notation are capable of being modeled, and modeling is a huge part of cognitive neuroscience. If an idea cannot be clearly modeled, then there are limits to how widely it can be tested and accepted by a cognitive neuroscience community. And finally, ideally, the idea will be articulated and modeled in such a way that it is not a complete mystery how it could be implemented by the brain. Though the idea that the brain models and predicts and anticipates is supported by introspection and a long history of hypotheses, it has largely failed on these latter three counts - especially compared with various theoretical competitors. And this is why the extent to which it has been embraced by cognitive science and neuroscience has been limited. 
+
+    \item \citep[Chapter 1.1]{Pezzulo2014} We argue that anticipation is a key ingredient for the design of autonomous, artificial cognitive agents of the future: Only cognitive systems with anticipation mechanisms can be credible, adaptive, and successful in interaction with both the environment and other autonomous systems and humans. This is the challenge that we anticipate for the future of cognitive systems research: the passage from reactive to anticipatory cognitive
+    
+    \item \citep[Chapter 1.2.1]{Pezzulo2014} traditional AI-based systems suffered from several fundamental problems: (1) The scalability problem restricted the systems to solve only highly simplified and very small toy problems. (2) The symbol grounding problem (Harnad, 1990) prevented them from identifying effective sensory discretizations, so that effective symbolic representations, which may be suitable for planning or decision making, did not emerge. (3) The frame problem (McCarthy and Hayes, 1969) prevented systems from effectively representing action-affected and -unaffected parts of the environment with logic-based representations. As
+    
+   \item \citep[Chapter~2.2]{Pezzulo2014} Prediction vs. Anticipation  .A clear distinction needs to be drawn between predictive systems-those that merely learn to predict and anticipatory systems. Essentially, it needs to be accepted that predicting is not the same as anticipating. Prediction is a representation of a particular future event. Anticipation is a future-oriented action, decision, or behavior based on a (implicit or explicit) prediction. Anticipation, that is the main focus of this book, is based on prediction and is especially important for cognitive systems since it is typically something the agent is concerned with. To assess the predictive and goal-directed behavior capabilities of adaptive, cognitive learning systems, it is useful to contrast different types of predictions as well as different types of anticipatory behavioral influences. Thus, we now first propose a taxonomy for predictions and anticipations for the realization of goal-directed behavior. 2.2.1
+   
+   \item \citep{Nadin2016} The brain has been considered in relation to the early sources of hydraulic power (fountains, pumps, water clocks). It was also put in relation to clockwork mechanisms, to steam engines, to telegraphic networks, to relay circuits, and-surprise! surprise!-to today's newest machine: the computer.
+   
+   \item \citep{Harnad1990} Symbolic Grounding Problem: There has been much discussion recently about the scope and limits of purely symbolic models of the mind and about the proper role of connectionism in cognitive modeling. This paper describes the ``symbol grounding problem": How can the semantic interpretation of a formal symbol system be made intrinsic to the system, rather than just parasitic on the meanings in our heads? How can the meanings of the meaningless symbol tokens, manipulated solely on the basis of their (arbitrary) shapes, be grounded in anything but other meaningless symbols? The problem is analogous to trying to learn Chinese from a Chinese/Chinese dictionary alone. A candidate solution is sketched: Symbolic representations must be grounded bottom-up in nonsymbolic representations of two kinds: (1) iconic representations, which are analogs of the proximal sensory projections of distal objects and events, and (2) categorical representations, which are learned and innate feature detectors that pick out the invariant features of object and event categories from their sensory projections. Elementary symbols are the names of these object and event categories, assigned on the basis of their (nonsymbolic) categorical representations. Higher-order (3) symbolic representations, grounded in these elementary symbols, consist of symbol strings describing category membership relations (e.g. ``An X is a Y that is Z").
+   
+   
+   
+   \item \citep[Chapter 2.3]{Meisel2011}The notion of “anticipation” has been a subject of scientific discussion within recent decades. Much attention was given to Rosen (1985) defining an anticipatory system as a system containing a predictive model of itself and/or of its environment, which allows it to change state at an instant in accord with the model’s predictions per- taining to a later instant. Butz et al (2003) define anticipatory behavior as a process, or behavior, that does not only depend on past and present but also on predictions, expectations, or beliefs about the future. From a literal point of view the meaning of the term “to anticipate something” may be defined as “to expect this thing to happen and be ready for it” (Longman, 2003) or similarly as “to forsee and deal with this thing in advance” (Merriam-Webster, 2003). In
+   
+\end{itemize}
+
+
+
+\section{Financial Environment}
+
+The concept of portfolio optimization has a long history and dates back to the seminal work of Markowitz (1952). In this paper, Markowitz defined precisely what portfolio selection means: “the investor does (or should) consider expected return a desirable thing and variance of return an undesirable thing”. This was the starting point of mean-variance optimization and portfolio allocation based on quantitative models. In particular, the Markowitz approach became the standard model for strategic asset allocation until the end of the 2000s.
+Since the financial crisis of 2008, another model has emerged and is now a very serious contender for asset allocation (Roncalli, 2013). The risk budgeting approach is successfully used for managing multi-asset portfolios, equity risk factors or alternative risk premia. The main difference with mean-variance optimization is the objective function. The Markowitz approach mainly focuses on expected returns and exploits the trade-off between performance and volatility. The risk budgeting approach is based on the risk allocation of the portfolio, and does not take into account expected returns of assets.
+
+The advantage of the risk budgeting approach is that it produces stable and robust port- folios. On the contrary, mean-variance optimization is very sensitive to input parameters. These stability issues make the practice of portfolio optimization less attractive than the theory (Michaud, 1989). Even for strategic asset allocation, many weight constraints need to be introduced in order to regularize the mathematical solution and obtain an acceptable financial solution. In the case of tactical asset allocation, professionals generally prefer to implement the model of Black and Litterman (1991, 1992), because the optimized portfolio depends on the current allocation. Therefore, the Black-Litterman model appears to be slightly more robust than the Markowitz model because having a benchmark or introducing a tracking error constraint is already a form of portfolio regularization. However, since the Black-Litterman model is a slight modification of the Markowitz model, it suffers from the same drawbacks.
+
+Since the 1990s, academics have explored how to robustify portfolio optimization in two different directions. The first one deals with the estimation of the input parameters. For instance, we can use de-noising methods (Laloux et al., 1999) or shrinkage approaches (Ledoit and Wolf, 2004) to reduce estimation errors of the covariance matrix. The second one deals with the objective function. As explained by Roncalli (2013), the Markowitz model is an aggressive model of active management due to the mean-variance objective function. Academics have suggested regularizing the optimization problem by adding penalization functions. For instance, it is common to include a L1 or L2 norm loss function. The advantage of this is to obtain a “sparser” or “smoother” solution.
+The success of risk parity, equal risk contribution (ERC) and risk budgeting portfolios has put these new developments in second place. However, the rise of robo-advisors is changing the current trend and highlights the need for active allocation models that are focused on expected returns. Indeed, the challenge of robo-advice concerns tactical asset allocation and not the portfolio construction of strategic asset allocation. Building a defensive, balance or dynamic portfolio profile is not an issue, because they are defined from an ex-ante point of view. Quantitative models can be used to define this step, but they are not necessarily required. For example, this step can also be done using a discretionary approach, since portfolio profiles are revised once and for all. The difficulty lies with the life of the invested portfolio and the dynamic allocation. A robo-advisor that would consist in rebalancing a constant-mix allocation is not a true robo-advisor, since it is reduced to the profiling of clients. The main advantage of robo-advisors is to perform dynamic allocation by including investment views, side assets or the client’s dynamic constraints, or some alpha engines provided by the robo-advisor’s manager or distributor.
+
+
+
+
+
+\section{Markov Decision Process}
+
+A Markov decision process (MDP) is a discrete time stochastic control process. It provides a mathematical framework for modeling decision making in situations where outcomes are partly random and partly under the control of a decision maker. A Markov decision process is defined by the tuple $(S,A,P_{\bb{a}},R_{\bb{a}})$ where:
+\begin{itemize}
+    \item $\bb{S}$ is the state-space (finite, countable, continuous) with $\bb{s} \in \bb{S}$ being the state,
+    \item $\bb{A}$ is the action-space (finite, countable, continuous), with $\bb{a} \in \bb{A}$ being the action,
+    \item $P_{\bb{a}}(\bb{s}',\bb{s})=\mathbb{P}(\bb{s}_{t+1}=|\bb{s}=\bb{s}_{t},\bb{a}_t=\bb{a}_{t})$ is the transition probability. This describes the probability of observing a next state $\bb{s}' \in \bb{S}$ when action $\bb{a} \in \bb{A}$ is taken in $\bb{s} \in \bb{S}$
+
+    \item $R_{\bb{a}}(\bb{s}',\bb{s})$ is the reward obtained when taking action $\bb{a}$, a transition from a state $\bb{s}$ to a state $\bb{s}'$.
+is observed.
+\end{itemize}
+
+
+A process which adheres to the Markov property stats that the information needed to problematically predict the future is contained in the current state. 
+Something on the order of the Markov process. 
+Notice that in some cases we can turn a higher-order Markov process into a Markov process by including the past as a new state variable. For instance, in the control o an inverted pendulum, the state that can be observed is only the angular position $\theta_t$. In this case the system is non-Markov since the next position depends on the previous position but also on the angular speed, which is defined as $d\theta_t = \theta_t - \theta_{t−1}$ (as a first approximation). Thus, if we define the state space as $s_t = (\theta_t, d\theta_t)$ we obtain a Markov chain.
+%
+\begin{definition}{Markov Property}
+Let the state space $S$ be a bounded compact subset of the Euclidean space, the discrete-time $t \in \mathbb{N}$ dynamic system $s_t \in S$ is a Markov chain if
+\begin{align}
+    \mathbb{P}(s_{t+1}=s|s_t,s_{t-1} \ldots s_{0}) = \mathbb{P}(s_{t+1}=s|s_t). 
+\end{align}
+\end{definition}
+%
+At time $t \in \mathbb{N}$ a policy (decision rule) $\pi_t$ is a mapping from states to actions, in particular
+it can be
+\begin{itemize}
+    \item Deterministic: $\pi_t : S \to A$, $\pi_t(s)$ denotes the action chosen at state $s$ at time $t$,
+    \item Stochastic: $\pi_t : S \to \Delta(A)$, $\pi_t(a|s)$ denotes the probability of taking action a at state $s$ at time $t$.
+\end{itemize}
+%
+A policy (strategy, plan) is a sequence of decision rules. In particular, we have: Non-stationary: $\pi = (\pi_0, \pi_1, \pi_2, 
+\ldots)$ and Stationary (Markov): $\pi = (\pi, \pi, \pi,\ldots)$.
+
+
+
+We wish to evaluate the value of a MDP; let us focus on the infinite horizon problem with deterministic and stationary policy $\pi : S \to A$. At each state transition we have reward function... 
+
+Given $\pi$, the infinite horizon value of a given state $s \in S$
+
+The infinite horizon value of a given state $s$ with adopted policies $\pi$ which provides the action $a$ is give in familiar recursive Bellman Equation
+%
+\begin{align}
+    V_\pi(\bb{s}) &= \sum_{\bb{s}' \in \bb{S}} P(\bb{s}'|\bb{s},\bb{a}) \left( R(\bb{s}'|\bb{s},\bb{a}) + \gamma V_\pi(\bb{s}') \right), \; \forall \; \bb{s} \in \bb{S}      
+\end{align}
+where the first additive terms on the right-hand side correspond to the expected immediate reward.
+
+Consider the case where $\bb{s}_t=\{ \bb{x}_{t-n},\ldots,\bb{x}_{t-1},\bb{x}_{t},\bb{w}_i  \}$. where $\ln(\bb{x}_{t}/\bb{x}_{t-1}) \sim \mathcal{N}(\bb{\mu},\bb{\Sigma})$.
+
+\begin{align}
+    R_a(\bb{s}_{t},\bb{s}'_t)=\sum_{i=t-n}^{t} \ln \left(\frac{\bb{x}'_{i}}{\bb{x}_i} \right)  - \sum_{i=t-n}^{t-1} \left ( \ln \left(\frac{\bb{x}'_{j}}{\bb{x}_j} \right) -\sum_{j=t-n}^{t} \ln \left(\frac{\bb{x}'_{j}}{\bb{x}_j} \right) \right) \left ( \ln \left(\frac{\bb{x}'_{j}}{\bb{x}_j} \right) -\sum_{j=t-n}^{t} \ln \left(\frac{\bb{x}'_{j}}{\bb{x}_j} \right) \right)^\top 
+\end{align}
+
+\newpage
+
+
+
+
+
+\paragraph{Direct Solution:} Matrix from $\bb{v},\bb{r} \in \mathbb{R}^d \quad d=\card{S}$ , and $\gamma \in (0,1)$ and $\bb{P} \in \mathbb{R}^{d \times d}$ 
+
+\begin{align}
+    \bb{v}_\pi &= \bb{r} + \gamma \bb{P}_{s'} \bb{v}_\pi \\      
+               &= (\bb{I} -\gamma \bb{P}_{s'} )^{-1} \bb{r} 
+\end{align}
+
+
+
+
+\subsubsection{Independent Sharp Ratio:}
+
+
+Consider the case where $s' \sim iid$. Making it a zero-order Markov chain. In this case $\bb{P}=\bb{1}\bb{p}_{s'}^\top$, where $\bb{p}_{s'}$ the probability of state $s'$. The resulting equation above simplifes to the followoing:
+
+\begin{align}
+    \bb{v}_\pi &= \left(\bb{I} + \frac{\gamma}{1-\gamma} \bb{1}\bb{p}^\top \right) \bb{r} \\
+    &=  \bb{r} + \frac{ \gamma (\bb{p}^\top \bb{r}) }{1-\gamma}\bb{1}.
+\end{align}
+
+Notice that the second part of the equation equal for all states that is, it the only differentiating factor between each state is the value of $\bb{r}$.
+
+
+
+Consider $s_t=(r_t)$, where $r_t=(p_{t}-p_{t-1})/p_{t-1}$ denote the incremental gains such which are stationary  $s_t \sim \mathcal{N}(\mu,\Sigma) \; \forall t \in T$. We define the reward as the sharp ratio and since we have a stationary indpenant distribution we have $\EO{s'}{R(s'|s,a)}=\EO{s'}{R(s|a)}= \E{a^\top s'}-\V{a^\top s'}$
+
+\begin{align}
+    V(s|a) &=  \EO{s'}{R(s'|s,a)} + \gamma \sum_{s' \in S} P(s'|s,a) V(s'|a) \\
+           &=  (a^\top \mu - a^\top \Sigma a) + \gamma \EO{s'}{V(s'|a)}\\
+           &=  (a^\top \mu - a^\top \Sigma a) + \gamma  V(s|a)\\
+           &=  (a^\top \mu - a^\top \Sigma a)  \frac{1}{1-\gamma}\\
+           &\propto  a^\top \mu - a^\top \Sigma a
+\end{align}
+
+
+In the case where we dont have a 
+$\EO{s'}{R(s'|s,a)}= \E{a^\top s'}-\V{a^\top s'} - \lambda \|a_l - a\|_{1}$. It is easy to see that 
+
+
+\begin{align}
+    V(s|a) &\propto   a^\top \mu - a^\top \Sigma a -  \lambda \|a_l - a\|_{1}
+\end{align}
+
+
+
+\newpage
+
+
+\paragraph{Anticipatory---Finite time horizon with discount:}
+Here we follow the same approche as the the MDP, but our actions are defined as a function of some future aticipatory state $s^+$
+
+
+\begin{equation}
+    V(s,s^+)= \sum_{s' \in S} P(s',s,s^+) \left( R( s',s,s^+) + \gamma V(s',s^+) \right).
+\end{equation}
+
+
+
+
+
+
+
+
+
+
+\subsection{Optimal Policy}
+\begin{equation}
+ \pi^* (\bb{S}) = \argmin_{\bb{a}} \left\{  -  \sum^{T}_{t=0}   \sum_{\bb{s}' \in \bb{S}_t} \gamma^t P(\bb{s}'|\bb{s},\bb{a}) C(\bb{s}',\bb{s},\bb{a})  \right\} 
+\end{equation}
+
+
+\subsection{Optimal Policy}
+\begin{equation}
+  \argmin_{\ubar{x}} \left\{   \sum^{T}_{t=0}   \sum_{ \bb{s}' \in \bb{S}_t} \gamma^t P_{s}(\bb{s}') C(\bb{s}',\bb{s},\bb{a})  \right\} 
+\end{equation}
+
+
+
+
+In the Markov Anticipation process: The current $x_{t}$, and some future anticipated state $x_{a}$, serves as the sole basis for making a decision $d_{t}(x_{a})$. 
+
+\begin{equation}
+    \ubar{x}^*=\argmin_{\ubar{x}} \left\{  \sum^{T}_{t=1}   \sum_{s_t \in S_t} \gamma^t P(\ubar{s}|s_{t}) C(\ubar{s},s_t) \right\} 
+\end{equation}
+
+
+
+\begin{equation}
+  \argmin_{ \ubar{x}} \left\{  C(s,\ubar{s})  + \sum^{T}_{t=1}   \sum_{s_t \in S_t} \gamma^t P_{\ubar{s} \to s_{t}} C(\ubar{s},s_t) \right\} 
+\end{equation}
+
+
+
+
+\begin{equation}
+  \argmin_{\ubar{x}} \left\{  C(s,\ubar{s})  + \sum^{T}_{t=1}   \sum_{s_t \in S_t} \gamma^t P_{\ubar{s} \to s_{t}} C(\ubar{s},s_t) \right\} 
+\end{equation}
+
+
+
+\section{Financial}
+
+\subsection{Markowitz Portfolio Theory}
+
+
+
+\begin{align}
+    \mathcal{M}(f(\bb{x})) =  \frac{\E{f(\bb{x})} }{\sqrt{\V{f(\bb{x})} } }
+\end{align}
+
+
+
+\section{Optimal Portfolio Function}
+Let $\bb{X} \in \mathbb{R}^{p \times n} $ be a set of historical returns comprising of $p$ assets and $n$ observation. Furthermore, let each observation $\bb{x} \in \bb{X}$ of the returns be Gaussian such that  $\bb{x} \sim \mathcal{P}(\bb{\mu^*},\bb{\Sigma^*})$ where $\bb{\mu^*} \in \mathbb{R}^p$ and $\bb{\Sigma^*} \in \mathbb{R}^{p \times p}$ are the true mean and covariance matrix, respectively. We are inserted in approximating the ``optimal portfolio function" $f^*$, which maps the asset returns to a optimal portfolio return $r$, that is $f^*:\bb{x} \to r$. The optimality of $r$ is defined such that it maximizes some ``investor preference function" $\mathcal{M}:r \to \mathbb{R}$. Thus the optimal portfolio function, is a function which maximizes $r$ based on the investor preference for all $ \bb{x} \in \bb{X}$; more precisely, the optional portfolio function can be written as   
+\begin{align}
+    f^* = \argmax_{f \in C^2(\mathbb{R}^p) } \{ \mathcal{M} (f(\bb{x}))\}, \; \forall \, \bb{x} \in \bb{X}. 
+\end{align}
+Notice that here $f^*$ is required to be at least two times differentiable, that is in $C^2$. The necessity for this degree of smoothness will be be clarified later one. 
+
+Consider now, the second-order approximation $f^*$ in the vicinity of $\bb{x}=0$,
+\begin{align}
+    f(\bb{x}) &= \bb{x}^\top \bb{g} + \frac{1}{2} \bb{x}^\top \bb{H} \bb{x},
+\end{align}
+where $g \in \mathbb{R}^p$ and $H \in \mathbb{R}^{p \times p}$ is the gradient and hessian, respectively.
+
+Let $\bb{x}_+$ be some future unobserved asset returns. We define the ``optimal portfolio weights" $\bb{w}^* (\bb{x}_+) \in \mathbb{R}^p$ as vector which is proportional to the direction of steepest ascent along the surface of optimal portfolio function $f^*$ at the point $\bb{x}_+$.
+
+
+
+Let $\bb{x}_+$ be some future unobserved asset returns and let us enforce $f^*(\bb{0})=0$. If we consider the central difference with a perturbation of $\frac{1}{2} \bb{x}_+$, the optimal returns can be approximated as  
+\begin{align}
+    f^*(\bb{x}_+) \approx  \bb{x}_+^\top \nabla f^*(\frac{1}{2}\bb{x}_+).
+\end{align}
+
+It is clear that the direction of steepest ascent along the surface of optimal portfolio function at the point $\bb{x}_+$, is proportional  
+
+In this formulation the gradient $\nabla f^*(\bb{x}_+)$, is proportional to our desired optimal portfolio weights $\bb{w}(\bb{x}_+)$. Indeed, our portfolio weights will correspond to the direction of steepest ascent along the surface of optimal portfolio function at the point $\bb{x}_+$.
+
+Similarly the expected optimal returns can be approximated as
+\begin{align}
+    \mathbb{E}[f^*(2\bb{x}_+)] \approx \mathbb{E}[ \bb{x}_+^\top \nabla f^*(\bb{x}_+)] =  \bb{\mu}^\top \mathbb{E}[\nabla f^*(\bb{x}_+)]. 
+\end{align}
+Notice that we can immediately draw a parallel between the expected future Markowitz portfolio returns $\bb{\mu}^\top \bb{w} $ and \eqref{eq:2.2}. 
+
+The underlying conjecture is that, given $\bb{x}_+$, $\nabla f^*(\bb{x})$ is proportional to the instantaneous optimal portfolio weights with respect to investor preference function. In Section \ref{sec:xxx} we will show that indeed if $\mathcal{M}$ is the Mean-Variance investor preference $\E{\nabla f^*(\bb{x}_+)}$ proportional to the Markowize portfolio weights. Of course, $\bb{x}_+$ is unknown, 
+
+
+In section \ref{sec:xxx} we will show that indeed, if $\mathcal{M}$ is the Mean-Variance investor preference, . Certainly, there no constraints on $\nabla f^*$ and thus the standard budget constraint of the short-selling Markowize portfolio do not hold for $\nabla f^*(\bb{x}_+)$. In the section to follow we expand on the ideas outlined above validate the statements.
+
+
+\newpage
+
+
+\section{Markov Decision Process}
+
+
+
+Markov decision processes formally describe an environment
+for reinforcement learning
+
+Where the environment is fully observable i.e. The current state completely characterizes the process
+
+Almost all RL problems can be formalized as MDPs, e.g. Optimal control primarily deals with continuous MDPs Partially observable problems can be converted into MDPs Bandits are MDPs with one state
+
+
+\paragraph{Markov Property:} The information needed to problematically predict the future is contained in the current state (Markov property). Notice that in some cases we can turn a higher-order Markov process into a Markov process by including the past as a new state variable. For instance, in the control o an inverted pendulum, the state that can be observed is only the angular position $\theta_t$. In this case the system is non-Markov since the next position depends on the previous position but also on the angular speed, which is defined as $d\theta_t = \theta_t - \theta_{t−1}$ (as a first approximation). Thus, if we define the state space as $s_t = (\theta_t, d\theta_t)$ we obtain a Markov chain.
+
+\begin{definition}{Markov Property}
+Let the state space $S$ be a bounded compact subset of the Euclidean space, the discrete-time $t \in \mathbb{N}$ dynamic system $s_t \in S$ is a Markov chain if
+\begin{align}
+    p(s_{t+1}=s|s_t,s_{t-1} \ldots s_{0}) = p(s_{t+1}=s|s_t). 
+\end{align}
+\end{definition}
+
+
+\paragraph{Markov Decision Process:} A Markov decision process is defined as a tuple $M = (S, A, P, C)$ where:
+\begin{itemize}
+    \item $S$ is the state space (finite, countable, continuous)
+    \item $A$ is the action space (finite, countable, continuous),
+    \item $P(s'|s, a)$ is the transition probability (i.e., environment dynamics) such that for any $s \in S$, $s' \in S$, and $a \in A$ is the probability of observing a next state $s'$ when action $a$ is taking in $s$.
+\item $R(s',s,a)$ is the reward obtained when taking action $a$, a transition from a state $s$ to a state $s'$
+is observed.
+\end{itemize}
+
+
+
+
+
+
+
+
+\backmatter
+\bibliographystyle{plainnat}
+\bibliography{biblio}
+
+\end{document}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 

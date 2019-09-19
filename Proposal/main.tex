@@ -1,0 +1,134 @@
+\documentclass[]{usiinfdocprop}
+\usepackage{lipsum}
+\usepackage{accents}
+\usepackage{bm}
+
+
+
+\newcommand{\thickhat}[1]{\mathbf{\hat{\text{$#1$}}}}
+\newcommand{\thickbar}[1]{\mathbf{\bar{\text{$#1$}}}}
+\newcommand{\thicktilde}[1]{\mathbf{\tilde{\text{$#1$}}}}
+\newcommand{\card}[1]{\text{card}(#1)}
+
+
+
+\newcommand{\E}[1]{\mathbb{E} \left[#1 \right]}
+\newcommand{\EO}[2]{\mathbb{E}_{#1} \left[#2 \right]}
+
+\newcommand{\V}[1]{\mathbb{V} \left[#1 \right]}
+
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}[theorem]{Definition}
+
+\newcommand{\bb}[1]{\boldsymbol{\mathbf{#1}}}
+\newcommand{\tr}[1]{\text{Tr}[#1]}
+\newcommand{\one}[1]{\mathbf{1}_{#1}}
+\newcommand{\qq}[3]{Q_{\boldsymbol{\mathbf{#1}}}(\boldsymbol{\mathbf{#2}},\boldsymbol{\mathbf{#3}})}
+\newcommand{\Diag}[1]{\text{Diag}(#1)}
+
+\newcommand{\ubar}[1]{\underaccent{\bar}{#1}}
+
+
+\begin{committee}
+  \advisor{Prof.}{Carlo}{Ghezzi}{Politecnico di Milano, Italy}
+  \internalmember{Prof.}{Mehdi}{Jazayeri}
+  \internalmember{Prof.}{Walter}{Binder}
+  \externalmember{Prof.}{Tevfik}{Bultan}{University of California -
+    Santa Barbara, USA}
+  \externalmember{Prof.}{Schahram}{Dustdar}{Technische Universit\"at  Wien, Austria}
+  \externalmember{Prof.}{Sebasti\'an}{Uchitel}{Universidad de Buenos
+    Aires, Argentina}
+\end{committee}
+\phddirector{Prof. Olaf Schenk}
+\author{Aryan Eftekhari}
+\title{Anticipatory Systems}
+\subtitle{Second Title}
+\usepackage{tikz}
+\usetikzlibrary{automata}
+\usepackage{listings}
+
+\hypersetup{
+colorlinks = true,
+linkcolor = blue,
+urlcolor  = blue,
+citecolor = blue,
+anchorcolor = blue
+}
+
+%change 'sl' to 'bf' for bold, or 'normalfont' for no special
+%formatting
+\captionsetup{labelfont={sl,sf}}
+
+\lstdefinelanguage{algebra}
+{morekeywords={import,sort,constructors,observers,transformers,axioms,if,
+else,end},
+sensitive=false,
+morecomment=[l]{//s},
+}
+\abstract{\lipsum[1]}
+\begin{document}
+\maketitle
+\frontmatter
+\tableofcontents
+\mainmatter
+
+
+
+\chapter{Introduction}
+\lipsum[2-5]
+
+
+\section{Intelligence}
+
+\lipsum[2-5]
+
+
+\section{Anticipation Vs. Prediction}
+
+\lipsum[2-5]
+
+
+
+\chapter{Anticipatory Systems}
+
+\section{Markov Decision Process}
+
+\begin{align}
+    V_\pi(\bb{s}) &= \sum_{\bb{s}' \in \bb{S}} P(\bb{s}'|\bb{s},\bb{a}) \left( R(\bb{s}'|,\bb{s},\bb{a}) + \gamma V_\pi(\bb{s}') \right), \; \forall \; \bb{s} \in \bb{S}      
+\end{align}
+
+\subsection{Stationary Process}
+
+\begin{align}
+    V_\pi(\bb{s}) &= \sum_{\bb{s}' \in \bb{S}} P(\bb{s}'|\bb{s},\bb{a}) \left( R(\bb{s}'|,\bb{s},\bb{a}) + \gamma V_\pi(\bb{s}') \right), \; \forall \; \bb{s} \in \bb{S}      
+\end{align}
+
+\subsection{Stationary Process}
+
+
+\chapter{Computation}
+
+
+
+\chapter{Preliminary Results}
+
+
+
+
+
+\backmatter
+\bibliographystyle{plainnat}
+\bibliography{biblio}
+
+\end{document}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 
